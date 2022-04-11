@@ -1,0 +1,73 @@
+{
+  "type": "Container",
+  "selectAction": {
+    "type": "Action.OpenUrl",
+    "title": "${Title}",
+    "url": "${URL}"
+  },
+  "items": [
+    {
+      "type": "Container",
+      "items": [
+        {
+          "type": "Container",
+          "items": [
+            {
+              "type": "ColumnSet",
+              "columns": [
+                {
+                  "type": "Column",
+                  "width": "auto",
+                  "items": [
+                    {
+                      "type": "Image",
+                      "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAhklEQVQ4jWNgGJlAqOn/CqHG/wVgduP/HiB+QDIGmgE3ULD5vwd//X8DKNsGKJlAKgaZQTsvi9b/lwC6UADE5qn/LwJkKxCLher/y2ALwwOCjf8bwF5u+r8AyP9PNAaGH+1dSHVA9Vimejoc/ACYZCqEm/4HgNlN/1NASYdInEIfA0cBRQAAM4kk7AwExUAAAAAASUVORK5CYII=",
+                      "horizontalAlignment": "Left",
+                      "spacing": "None"
+                    }
+                  ]
+                },
+                {
+                  "type": "Column",
+                  "width": "stretch",
+                  "items": [
+                    {
+                      "type": "TextBlock",
+                      "text": "${Title}",
+                      "height": "stretch",
+                      "size": "Large",
+                      "weight": "Bolder",
+                      "color": "Accent",
+                      "fontType": "Default",
+                      "spacing": "None"
+                    }
+                  ],
+                  "horizontalAlignment": "Left",
+                  "spacing": "Small"
+                }
+              ]
+            }
+          ],
+          "spacing": "Small"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "**Created:** ${Created}",
+      "wrap": true,
+      "spacing": "None"
+    },
+    {
+      "type": "TextBlock",
+      "text": "**Created By:** ${CreatedBy}",
+      "spacing": "None"
+    },
+    {
+      "type": "TextBlock",
+      "wrap": true,
+      "text": "**Last modified time:** ${LastModifiedTime}",
+      "spacing": "None"
+    }
+  ]
+}
