@@ -64,9 +64,7 @@ namespace MSGraphSearchSample.Dialogs
         private async Task<DialogTurnResult> searchAccountAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             queryString = stepContext.Result.ToString();
-            var entityTypes = new List<EntityType>();
-            entityTypes.Add(entityType);
-            var searchResult = await graphService.Search(entityTypes, queryString);
+            var searchResult = await graphService.Search(entityType, queryString);
             return await stepContext.NextAsync(searchResult, cancellationToken);
         }
 

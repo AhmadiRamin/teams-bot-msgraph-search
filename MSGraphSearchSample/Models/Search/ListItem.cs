@@ -12,5 +12,7 @@ namespace MSGraphSearchSample.Models.Search
         public string CreatedBy { get; set; }
         public string LastModifiedTime { get; set; }
         public string URL { get; set; }
+        public string SitePath { get; set; }
+        public string SiteName { get; set; }
     }
 }

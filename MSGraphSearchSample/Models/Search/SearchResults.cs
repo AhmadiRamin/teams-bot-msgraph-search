@@ -10,7 +10,7 @@ namespace MSGraphSearchSample.Models.Search
         public int From { get; set; }
         public int CurrentPage { get; set; }
         public string Action { get; set; }
-        public List<EntityType> EntityTypes { get; set; }
+        public EntityType EntityType { get; set; }
         public string QueryString { get; set; }
     }
 }

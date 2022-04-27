@@ -13,7 +13,9 @@ namespace MSGraphSearchSample.Constants.Search
             "created",
             "createdby",
             "lastmodifiedtime",
-            "url"
+            "url",
+            "sitetitle",
+            "sitepath"
         };
         public static List<string> MessageFields = new List<string>()
         {

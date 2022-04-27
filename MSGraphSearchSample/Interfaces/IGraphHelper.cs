@@ -8,8 +8,6 @@ namespace MSGraphSearchSample.Interfaces
 {
     public interface IGraphHelper
     {
-        GraphServiceClient GetApplicationServiceClient();
         GraphServiceClient GetDelegatedServiceClient(string _token);
-        Task<string> GetOnBehalfOfAccessToken(string _token, string resourceUri);
     }
 }

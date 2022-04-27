@@ -21,7 +21,7 @@ namespace MSGraphSearchSample.Constants.Search
             switch (fileExtension)
             {
                 case "xsl":
-                case "xslx":
+                case "xlsx":
                     return xslx;
                 case "docx":
                 case "doc":

@@ -65,7 +65,7 @@ namespace MSGraphSearchSample.Services
             var pageSize = appconfig.SearchPageSize;
             var currentPage = searchResults.CurrentPage;
             var pageNumber = searchResults.CurrentPage;
-            var entityTypes = searchResults.EntityTypes;
+            var entityTypes = searchResults.EntityType;
             var totalPages = elements.Page(pageSize).Count();
             var totalResult = searchResults.Total;
             var action = searchResults.Action;
@@ -113,7 +113,7 @@ namespace MSGraphSearchSample.Services
                         Data = new PagingData { 
                             From = previousFrom, 
                             PageNumber = lastPaging ? currentPage - pagesPerQueryCount : currentPage - totalPages,
-                            EntityTypes = entityTypes,
+                            EntityType = entityTypes,
                             QueryString = searchResults.QueryString
                         },
                         Task = Tasks.Paging
@@ -125,7 +125,7 @@ namespace MSGraphSearchSample.Services
                         Data = new PagingData { 
                             From = nextFrom, 
                             PageNumber = currentPage + totalPages,
-                            EntityTypes=entityTypes,
+                            EntityType=entityTypes,
                             QueryString = searchResults.QueryString                           
                         },
                         Task = Tasks.Paging
@@ -250,7 +250,7 @@ namespace MSGraphSearchSample.Services
 
         private AdaptiveElement GetBodyContainer(SearchResults results)
         {
-            var entityType = results.EntityTypes[0];
+            var entityType = results.EntityType;
             AdaptiveElement bodyContainer = new AdaptiveContainer();
             switch (entityType)
             {

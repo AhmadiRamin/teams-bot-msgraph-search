@@ -8,10 +8,10 @@ namespace MSGraphSearchSample.Constants.MessagingExtension
     public static class CommandIds
     {
         // Search commands
-        public const string SearchByName = "SearchByName";
-        public const string SearchByType = "SearchByType";
-        public const string SearchByDate = "SearchByDate";
-
+        public const string SearchEvents = "SearchEvents";
+        public const string SearchFiles = "SearchFiles";
+        public const string SearchListItems = "SearchListItems";
+        public const string SearchMessages = "SearchMessages";
         // Action commands
         public const string CreateCard = "CreateCard";
 

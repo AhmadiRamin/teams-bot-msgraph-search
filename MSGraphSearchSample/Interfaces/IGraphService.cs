@@ -13,6 +13,6 @@ namespace MSGraphSearchSample.Interfaces
         void SetAccessToken(string token);
         Task<User> GetCurrentUserInfo();
 
-        Task<SearchResults> Search(List<EntityType> entityTypes, string queryString, int from = 0);
+        Task<SearchResults> Search(EntityType entityTypes, string queryString, int from = 0);
     }
 }

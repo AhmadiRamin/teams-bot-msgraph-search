@@ -93,7 +93,7 @@ namespace MSGraphSearchSample.Bots
             {
                 JObject val = JObject.FromObject(invokeValue.Action.Data);
                 PagingData data = val.ToObject<CardTaskFetchValue<PagingData>>()?.Data;
-                var results = await _graphService.Search(data.EntityTypes,data.QueryString, data.From);
+                var results = await _graphService.Search(data.EntityType,data.QueryString, data.From);
                 var cardAttachment = new Attachment();
 
                 if (results != null && results.Total > 0)

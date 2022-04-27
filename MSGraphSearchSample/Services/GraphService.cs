@@ -50,7 +50,7 @@ namespace MSGraphSearchSample.Services
             }
         }
 
-        public async Task<SearchResults> Search(List<EntityType> entityTypes, string queryString, int from = 0)
+        public async Task<SearchResults> Search(EntityType entityType, string queryString, int from = 0)
         {
             try
             {
@@ -58,19 +58,19 @@ namespace MSGraphSearchSample.Services
                 var threshold = _appconfig.SearchSizeThreshold;
                 var pageSize = _appconfig.SearchPageSize;
                 var size = Enumerable.Range(1, threshold).Where(n => n % pageSize == 0).Last();
-
                 var request = new List<SearchRequestObject>()
                 {
                     new SearchRequestObject
                     {
                         From =from,
                         Size = size,
-                        EntityTypes = entityTypes,
+                        EntityTypes = new List<EntityType>(){entityType},
                         Query = new SearchQuery
                         {
-                            QueryString =queryString
-                        },
-                        Fields = SearchFields.GetFieldsByEntityType(entityTypes[0])
+                            QueryString =$"{QueryTemplates.GetQuery(entityType,queryString)}",
+                            
+                        },                        
+                        Fields = SearchFields.GetFieldsByEntityType(entityType)
                     }
                 };
 
@@ -101,7 +101,7 @@ namespace MSGraphSearchSample.Services
                     {
                         Hits = hits.ToList(),
                         Total = total,
-                        EntityTypes = entityTypes,
+                        EntityType = entityType,
                         From = from,
                         QueryString = queryString,
                         Action = Actions.None,

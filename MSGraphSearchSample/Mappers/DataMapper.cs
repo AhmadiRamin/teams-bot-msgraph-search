@@ -83,13 +83,36 @@ namespace MSGraphSearchSample.Mappers
                 {
                     Title = EntityHelper.GetValue(hit.Resource, "title"),
                     URL = EntityHelper.GetValue(hit.Resource, "url"),
-                    Created = EntityHelper.GetValue(hit.Resource, "created"),
+                    Created = DateTime.Parse(EntityHelper.GetValue(hit.Resource, "created")).ToString(),
                     CreatedBy = EntityHelper.GetValue(hit.Resource, "createdby"),
-                    LastModifiedTime = EntityHelper.GetValue(hit.Resource, "lastmodifiedtime")
+                    LastModifiedTime = DateTime.Parse(EntityHelper.GetValue(hit.Resource, "lastmodifiedtime")).ToString(),
+                    SiteName = EntityHelper.GetValue(hit.Resource, "sitetitle"),
+                    SitePath = EntityHelper.GetValue(hit.Resource,"sitepath")
                 };
                 items.Add(item);
             }
             return items;
+        }
+
+        public static dynamic GetMappedData(List<SearchHit> hits, EntityType entityType)
+        {
+            switch (entityType)
+            {
+                case EntityType.Event:
+                    var events = GetEvents(hits);
+                    return events;
+                case EntityType.DriveItem:
+                    var files = GetFiles(hits);
+                    return files;
+                case EntityType.ListItem:
+                    var items = GetListItems(hits);
+                    return items;
+                case EntityType.Message:
+                    var messages = GetMessages(hits);
+                    return messages;
+                default:
+                    return null;
+            }
         }
     }
 }
