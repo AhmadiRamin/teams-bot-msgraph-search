@@ -25,7 +25,7 @@
         {
           "type": "TextBlock",
           "wrap": true,
-          "text": "* Search Outlook messages\n* Search calendar events\n* Search SharePoint list items\n* Search People\n* Search OneDrive files"
+          "text": "* Search Outlook messages\n* Search calendar events\n* Search SharePoint list items\n* Search OneDrive files"
         },
         {
           "type": "Container",
